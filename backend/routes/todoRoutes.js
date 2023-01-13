@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const { home, createTodo } = require("../controllers/createTodoController")
 
-router.get("/",(req, res) => {
-    res.send("hello world");
-})
+router.get("/", home);
+router.post("/createTodo", createTodo);
 
 module.exports = router;
