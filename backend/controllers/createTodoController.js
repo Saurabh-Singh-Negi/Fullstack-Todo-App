@@ -6,8 +6,10 @@ const Todo = require("../model/todoModel");
 
 exports.createTodo = async (req, res) => {
     try {
+        const {title} = req.body;
+        
         const newTodo = new Todo({
-            title: req.body
+            title: title
         }) 
     
         if(!title) {
