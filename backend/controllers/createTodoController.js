@@ -1,8 +1,8 @@
 const Todo = require("../model/todoModel");
 
-// exports.home = (req, res) => {
-//     res.send("hello world. This is a MERN TODO APP");
-// };
+exports.home = (req, res) => {
+    res.send("hello world. This is a MERN TODO APP");
+};
 
 exports.createTodo = async (req, res) => {
     try {

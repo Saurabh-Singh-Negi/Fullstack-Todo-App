@@ -1,9 +1,16 @@
-const Todo = require("../model/todoModel")
+const Todo = require("../model/todoModel");
 
 exports.deleteTodo = async (req, res) => {
     try {
-        const todoID = req.params.id;
-        const delTodo = Todo.findByIdAndDelete(todoID);
+        const todoID  = req.params.id;
+
+        if(!todoID) {
+            return res.status(400).json({
+                message: "wrong id"
+            });
+        }
+
+        const delTodo = await Todo.findByIdAndDelete(todoID);
 
         res.status(200).json({
             success: true,
